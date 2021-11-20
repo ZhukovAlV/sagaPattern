@@ -17,7 +17,7 @@ public class ReserveFlightActivity implements Activity {
 
     @Override
     public boolean rollback() {
-        System.out.println("Откатываем заказ к первоначальному состоянию");
+        System.out.println("Откатываем рейс к первоначальному состоянию");
         return false;
     }
 }

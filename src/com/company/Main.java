@@ -14,12 +14,10 @@ public class Main {
 
         // Запускаем наш заказ на отработку
         RoutingSlip routingSlip = new RoutingSlip(listActivity);
-        routingSlip.process();
-
-        // отменяем заказ, если не все было выполнено
-        if (!routingSlip.isCompleted()) {
-            System.out.println("Заказ не был выполнен");
+        // Отменяем заказ, если не все было выполнено
+        if (!routingSlip.process()) {
             routingSlip.undo();
+            System.out.println("Заказ не был выполнен");
         } else {
             System.out.println("Счастливого пути");
         }
