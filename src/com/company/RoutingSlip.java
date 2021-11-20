@@ -9,9 +9,9 @@ public class RoutingSlip {
         this.queue = queue;
     }
 
+    // Проверяем, что хоть какой-то заказ не был выполнен
     public boolean process() {
 
-        // Проверяем, что хоть какой-то заказ не был выполнен
         for (Activity activity : queue) {
             activity.reserve();
             if (!activity.check()) return false;
