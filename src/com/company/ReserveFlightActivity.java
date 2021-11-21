@@ -20,4 +20,10 @@ public class ReserveFlightActivity implements Activity {
         System.out.println("Откатываем рейс к первоначальному состоянию");
         return false;
     }
+
+    @Override
+    public boolean commit() {
+        System.out.println("Транзакция по заказу рейса применена");
+        return false;
+    }
 }

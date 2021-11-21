@@ -20,6 +20,7 @@ public class Main {
             System.out.println("Заказ не был выполнен");
         } else {
             System.out.println("Счастливого пути");
+            routingSlip.commit();
         }
     }
 }

@@ -9,7 +9,7 @@ public class RoutingSlip {
         this.queue = queue;
     }
 
-    // Проверяем, что хоть какой-то заказ не был выполнен
+    // Проверяем, что хоть какой-то заказ не был зарезервирован
     public boolean process() {
 
         for (Activity activity : queue) {
@@ -28,6 +28,15 @@ public class RoutingSlip {
         for (Activity activity : queue) {
             if (activity.check())
             activity.rollback();
+        }
+    }
+
+    // Коммитим результат
+    public void commit() {
+
+        // Применяем все заказы, что были зарезервированы
+        for (Activity activity : queue) {
+            activity.commit();
         }
     }
 }

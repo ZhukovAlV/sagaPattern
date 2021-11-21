@@ -20,4 +20,10 @@ public class ReserveHotelActivity implements Activity {
         System.out.println("Откатываем заказ на отель к первоначальному состоянию");
         return false;
     }
+
+    @Override
+    public boolean commit() {
+        System.out.println("Транзакция по заказу отеля применена");
+        return false;
+    }
 }

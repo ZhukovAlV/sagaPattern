@@ -20,4 +20,10 @@ public class ReserveCarActivity implements Activity {
         System.out.println("Откатываем заказ на автомобиль к первоначальному состоянию");
         return false;
     }
+
+    @Override
+    public boolean commit() {
+        System.out.println("Транзакция по заказу авто применена");
+        return false;
+    }
 }
